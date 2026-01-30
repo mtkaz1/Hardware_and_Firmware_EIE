@@ -61,7 +61,7 @@ static bool ble_get_adv_device_name_cb(struct bt_data* data, void* user_data) {
   if (data->type == BT_DATA_NAME_COMPLETE || data->type == BT_DATA_NAME_SHORTENED) {
     /* Copy the name to the user data buffer */
     memcpy(name, data->data, data->data_len);
-    name[data->data_len] = '\\0'; /* Null-terminate the string */
+    name[data->data_len] = '\0'; /* Null-terminate the string */
     return false;                 /* Stop parsing after finding the name */
   }
 
